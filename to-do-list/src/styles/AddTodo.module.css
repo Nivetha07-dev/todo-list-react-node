@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .btn {
+    background-color: #28a745;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+  }
+  

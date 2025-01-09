@@ -1,0 +1,31 @@
+.todoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .todoItem:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .todoItem.completed span {
+    text-decoration: line-through;
+    color: #777;
+  }
+  
+  button {
+    background-color: #dc3545;
+  }
+  
+  button:hover {
+    background-color: #b02a37;
+  }
+
+  .checkbox {
+    max-width: 25px;
+  }
+  
