@@ -1,15 +1,15 @@
-import TodoItem from './ToDoItem';
+import TodoItem from './TodoItem';
 import styles from '../styles/TodoList.module.css';
 
 export interface Todo {
   id: number;
-  text: string;
+  name: string;
   completed: boolean;
 }
 
 interface TodoListProps {
   todos: Todo[];
-  toggleComplete: (id: number) => void;
+  toggleComplete: (id: number, completed: boolean) => void;
   deleteTodo: (id: number) => void;
 }
 
