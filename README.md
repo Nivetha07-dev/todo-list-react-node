@@ -15,24 +15,18 @@ A full-stack task management app with Google OAuth authentication.
 - RESTful API
 
 ## How to Run
-\`\`\`bash
 git clone https://github.com/Nivetha07-dev/todo-list-react-node
 cd todo-list-react-node
-\`\`\`
 
 **Backend**
-\`\`\`bash
 cd server
 npm install
 npm start
-\`\`\`
 
 **Frontend**
-\`\`\`bash
 cd to-do-list
 npm install
 npm start
-\`\`\`
 
 Requires a MongoDB connection string and Google OAuth credentials in a `.env` file — see `.env.example`.
 
