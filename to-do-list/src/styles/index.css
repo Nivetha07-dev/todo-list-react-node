@@ -38,3 +38,16 @@ ul {
 li {
   margin-bottom: 10px;
 }
+
+nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    max-width: 900px;
+    margin: 10px 0 10px 0;
+    /* width: 600px; */
+    font-family: cursive;
+    font-style: italic;
+    column-gap: 10px;
+    left: 500px;
+}

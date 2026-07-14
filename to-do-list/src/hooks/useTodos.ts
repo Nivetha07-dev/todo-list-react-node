@@ -1,17 +1,21 @@
 import { useState, useEffect } from 'react';
 import apiClient from '../utils/apiClient';
-import { Todo } from '../components/TodoList'
+import { Todo } from '../components/TodoList';
+import { User } from './manageUser';
 
 // Create an API client with the base URL of the backend
 const client = apiClient('http://localhost:3000');
 
-export const useTodos = () => {
+export const useTodos = (user: User | null) => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   // Fetch all tasks
   const fetchTodos = async () => {
+
+    if (!user) return; // Don't fetch if user is not logged in
+
     try {
-      const response = await client.get('/tasks');
+      const response = await client.get(`/tasks`, { userId: user._id });
       setTodos(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -25,6 +29,7 @@ export const useTodos = () => {
         id: Date.now(),
         name: text,
         completed: false,
+        userId: user?._id,
       }
       const response = await client.post('/tasks', payload);
 
@@ -65,7 +70,7 @@ export const useTodos = () => {
   // Fetch todos on component mount
   useEffect(() => {
     fetchTodos();    
-  }, []);
+  }, [user]);
 
   return { todos, addTodo, toggleComplete, deleteTodo };
 };
