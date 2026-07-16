@@ -4,7 +4,9 @@ import { Todo } from '../components/TodoList';
 import { User } from './manageUser';
 
 // Create an API client with the base URL of the backend
-const client = apiClient('http://localhost:3000');
+const client = apiClient(
+  import.meta.env.VITE_API_URL || "http://localhost:3000"
+);
 
 export const useTodos = (user: User | null) => {
   const [todos, setTodos] = useState<Todo[]>([]);

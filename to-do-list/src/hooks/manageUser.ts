@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import apiClient from '../utils/apiClient';
-const client = apiClient('http://localhost:3000');
- 
+const client = apiClient(
+  import.meta.env.VITE_API_URL || "http://localhost:3000"
+); 
 export interface User {
     _id: string;
     name: string; 
