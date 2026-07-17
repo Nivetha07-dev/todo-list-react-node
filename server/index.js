@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors({
     origin: [
       "http://localhost:5173",
-      "https://your-project-name.vercel.app",
+      "https://todo-list-react-node-gray.vercel.app"
     ],
     credentials: true,
   }
