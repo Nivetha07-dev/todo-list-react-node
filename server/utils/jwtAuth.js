@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken'); 
-const SECRET_KEY = 'your_secret_key'; // Use a secure key for signing JWTs
+const SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 // Generate a JWT token
 const generateUserToken = (user) => {
