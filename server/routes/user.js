@@ -39,8 +39,9 @@ router.post("/google", async (req, res) => {
         .status(200)
         .cookie('jwtToken', jwtToken, {
           httpOnly: true,
-          secure: false, 
-          maxAge: 4 * 60 * 60 * 1000, // 4 hours
+          secure: true,
+          sameSite: "None",
+          maxAge: 4 * 60 * 60 * 1000,   // 4 hrs
         })
         .json({ user });
 
